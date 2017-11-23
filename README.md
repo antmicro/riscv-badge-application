@@ -67,7 +67,7 @@ Download and installation instructions can be found in the [SDK's GitHub reposit
 ### Uploading
 
 With the SDK installed, you can connect to the board using OpenOCD with the configuration file from the `utils` directory.
-To establish anOpenOCD connection, switch to the `utils` directory and run:
+To establish an OpenOCD connection, switch to the `utils` directory and run:
 
 ```sh
 # assuming that the openocd executable's location is in PATH
@@ -75,7 +75,7 @@ $ sudo openocd -f openocd_quad.cfg
 ```
 
 Leave it running, and in a different terminal, use GDB to upload the binary to the board.
-Use the RISC-V GDB from Sifive's Freedom-E-SDK toolchain.
+Use the RISC-V GDB from SiFive's Freedom-E-SDK toolchain.
 
 Before loading, the device's flash protection has to be disabled.
 In order to load the binary to the device, run the following commands in the GDB terminal:
