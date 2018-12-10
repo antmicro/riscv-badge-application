@@ -68,7 +68,7 @@ void main(void)
 	spi_conf.cs = NULL,
 
 	i2c_dev = device_get_binding(CONFIG_I2C_0_NAME);
-	if (!spi_dev) {
+	if (!i2c_dev) {
 		printk("Failed to bind I2C driver\n");
 	}
 
