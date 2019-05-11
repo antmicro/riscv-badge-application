@@ -90,6 +90,27 @@ $ gdb
 (gdb) monitor resume
 ```
 
+### Modifying existing ricv-v logo
+The following script can be used to update the image stored in the flash. Make 200x96 black&white 1bit PNG file, install `imagemagick` package (your distribution might have it installed already). Save the script listed below to a file a and run it. The image file path needs to be provided as a argument.
+
+```sh
+TARGET_FILE=risc-v-logo.h
+
+if [ -f "$1" ]; then
+    echo "#ifndef __RISC_V_LOGO_H__" > $TARGET_FILE
+    echo "#define __RISC_V_LOGO_H__" >> $TARGET_FILE
+    echo "" >> $TARGET_FILE
+    echo "unsigned char riscv_logo_bits[] = {" >> $TARGET_FILE
+    convert $1 GRAY:- | hexdump -v -e '1/1 "(0x%02x&0x80)>>7| " 1/1 "(0x%02x&0x80)>>6| " 1/1 "(0x%02x&0x80)>>5| " 1/1 "(0x%02x&0x80)>>4| " 1/1 "(0x%02x&0x80)>>3| " 1/1 "(0x%02x&0x80)>>2| " 1/1 "(0x%02x&0x80)>>1| " 1/1 "(0x%02x&0x80)" ",\n"' >> $TARGET_FILE
+    echo "}" >> $TARGET_FILE
+    echo "#endif" >> $TARGET_FILE
+else
+    echo "This script needs a image file as a argument"
+fi
+```
+
+Note: The image stored in the EEPROM will be kept as it is. To update the EEPROM use a NFC programmer.
+
 ## Connecting to the board
 
 The board uses a quad USB chip, so it will show up in the system as four tty devices.
