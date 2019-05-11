@@ -82,6 +82,7 @@ In order to load the binary to the device, run the following commands in the GDB
 ```sh
 $ gdb
 (gdb) set remotetimeout 240
+(gdb) set arch riscv:rv32
 (gdb) target extended-remote localhost:3333
 (gdb) monitor reset halt
 (gdb) monitor flash protect 0 64 last off
