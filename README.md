@@ -29,7 +29,7 @@ Zephyr itself requires some additional tools to be installed in the system. Foll
 To build the application you need to setup a build environment.
 To do this, source the `zephyr-env.sh` file from the `zephyr` directory.
 ```sh
-$ source zephyr/zephyr-env.sh
+$ source riscv-badge-application/zephyr/zephyr-env.sh
 ```
 Additionally, three environment variables have to be set before building the app:
 
@@ -41,7 +41,7 @@ $ export BOARD="hifive1"
 
 The next step is to create a make environment:
 ```sh
-$ cd badge_fe310/
+$ cd riscv-badge-application/badge_fe310/
 $ mkdir -p build && cd build
 $ cmake ../
 
