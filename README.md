@@ -3,7 +3,7 @@
 ## Cloning the repository
 
 The application is based on the Zephyr RTOS. The code of the Zephyr RTOS is referenced as a submodule.
-In order to clone the repository and its sudmodules run the following command:
+In order to clone the repository and its submodules run the following command:
 
 ```sh
 $ git clone --recursive https://github.com/antmicro/riscv-badge-application.git
