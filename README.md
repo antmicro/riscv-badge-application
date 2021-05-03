@@ -1,5 +1,7 @@
 # RISC-V Electronic Badge application
 
+Copyright (c) 2017-2021 [Antmicro](https://www.antmicro.com)
+
 ## Cloning the repository
 
 The application is based on the Zephyr RTOS. The code of the Zephyr RTOS is referenced as a submodule.
